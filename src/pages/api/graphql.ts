@@ -1,9 +1,9 @@
 import { ApolloServer } from 'apollo-server-micro';
 import Cors from 'micro-cors';
 
-import { typeDefs } from '../../graphql/typeDefs';
-import { resolvers } from '../../graphql/resolver';
-import { context } from '../../graphql/context';
+import { typeDefs } from '../../../graphql/typeDefs';
+import { resolvers } from '../../../graphql/resolver';
+import { context } from '../../../graphql/context';
 import { NextApiHandler } from 'next';
 import { RequestHandler } from 'micro';
 
@@ -26,7 +26,7 @@ const handler: NextApiHandler = async (req,res) => {
 
   await startServer;
   const apolloHandler = await apolloServer.createHandler({
-    path: '/api/grathql'
+    path: '/api/graphql'
   })
   return apolloHandler(req, res);
 }
