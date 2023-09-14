@@ -2,12 +2,13 @@
 
 This project has two branch's
 
-First is the main branch, is this branch the application is configured to run in local
-Second to run in deploy with name prepare-to-deploy
+First is the main branch, is this branch the application is configured to run in local and only have the API Rest.
+
+Second to run in local too, but contain apollo client and apollo server
 
 The DB is confired with Postgress, maybe you need change the configuration to connect in yout database.
 
-Following the tutorial in https://archimedesrocha.com.br/manage-links-next-prisma-and-graphql
+Following the tutorial in https://archimedesrocha.com.br/manage-links-next-prisma-and-graphql/#5%20-%20Conectando%20o%20DB%20ao%20Prisma
 
 ## Getting Started - Only in local with archives the branch main
 
