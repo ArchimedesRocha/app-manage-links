@@ -10,7 +10,6 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.3",
     "@apollo/server": "^4.9.3",
     "@babel/preset-env": "^7.22.15",
     "@graphql-codegen/cli": "^5.0.0",
