@@ -1,7 +1,16 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-export default function Home() {
+import graphqlClient from '../../graphql/apollo-client'
+import { gql } from '@apollo/client'
+
+import { Link } from '../../types/Link'
+
+type Props = {
+  links: Link
+}
+
+export default function Home({ links }: Props) {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -44,10 +53,31 @@ export default function Home() {
           <h2>
             Total Links <span>-&gt;</span>
           </h2>
-          <p>Teste</p>
-
+          <p>05</p>
         </a>
       </div>
     </main>
   )
+}
+
+export const getServerSideProps = async () => {
+  const { data } = await graphqlClient.query({
+    query: gql`
+      query {
+        links {
+          id
+          title
+          url
+        }
+      }
+    `
+  })
+
+  console.log(data)
+
+  return {
+    props: {
+      links: data.links
+    }
+  }
 }
